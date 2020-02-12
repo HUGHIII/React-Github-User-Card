@@ -1,12 +1,16 @@
 import React from 'react';
 import axios from 'axios';
+import User from './components/user';
+import Follower from './components/follower';
+
+
 
 import './App.css';
 
 class App extends React.Component {
   
   state = {
-    users: [],
+    user: [],
     };
 
   componentDidMount(){
@@ -15,14 +19,20 @@ class App extends React.Component {
     .then(res => {
       console.log(res.data)
       this.setState({
-        users:res.data
+        user:res.data
       })
     })
     .catch(err => console.log(err,'error'))
   }
   render(){return (
     <div className="App">
-    
+      <header> 
+        <User user={this.state.user}/>
+      </header>
+      <section className='followers'>
+        <Follower/>
+      </section>
+   
     </div>
   );
 }
