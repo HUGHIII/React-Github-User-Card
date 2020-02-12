@@ -29,7 +29,7 @@ class App extends React.Component {
       <header> 
         <User user={this.state.user}/>
       </header>
-      <section className='followers'>
+      <section className='followers-sec'>
         <Follower/>
       </section>
    

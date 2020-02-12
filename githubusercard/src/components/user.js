@@ -2,6 +2,7 @@ import React from 'react'
 
 
 
+
 const User = props => {
     return (
         <div className='user-card'>
@@ -11,6 +12,8 @@ const User = props => {
             <p>Current Location: {props.user.location}</p>
             <p>Bio: {props.user.bio}</p>
             <p>{props.user.email}</p>
+            <p>Followers: {props.user.followers}</p>
+            <p>Following: {props.user.following}</p>
         </div>
     )
 }

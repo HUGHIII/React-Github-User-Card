@@ -1,5 +1,17 @@
 import React from 'react';
 import axios from 'axios';
+import FollowerCard from './followerCard';
+import styled from 'styled-components';
+
+const DivFollow = styled.div `
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+padding:5%;
+
+
+`
+
 
 
 
@@ -16,13 +28,17 @@ class Follower extends React.Component {
                 followers:res.data
             })
         })
+        .catch(err => console.log(err,'ERROR!!'))
     }
 
     render(){
         return(
-            <div>
-
-            </div>
+            <DivFollow className='followers-div-map'>
+                {this.state.followers.map(e => (
+                    <FollowerCard key={e.id} followers={e}/>
+                ))}
+                 
+            </DivFollow>
 
         )
     }
